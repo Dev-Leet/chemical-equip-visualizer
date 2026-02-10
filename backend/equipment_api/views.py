@@ -86,6 +86,9 @@ def upload_csv(request):
     except ValueError as e:
         return Response({'error': str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
     except Exception as e:
+        import traceback
+        traceback.print_exc()
+        print(f"❌ REAL ERROR: {e}")
         return Response({'error': 'An error occurred while processing the file.'}, 
                         status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

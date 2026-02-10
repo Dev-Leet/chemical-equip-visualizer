@@ -1,18 +1,19 @@
 import pandas as pd
+import numpy as np
 
 class DataAnalyzer:
     def compute_statistics(self, df):
         return {
-            'total_count': len(df),
-            'avg_flowrate': df['Flowrate'].mean(),
-            'avg_pressure': df['Pressure'].mean(),
-            'avg_temperature': df['Temperature'].mean(),
-            'min_flowrate': df['Flowrate'].min(),
-            'max_flowrate': df['Flowrate'].max(),
-            'min_pressure': df['Pressure'].min(),
-            'max_pressure': df['Pressure'].max(),
-            'min_temperature': df['Temperature'].min(),
-            'max_temperature': df['Temperature'].max(),
+            'total_count': int(len(df)),
+            'avg_flowrate': float(df['Flowrate'].mean()),
+            'avg_pressure': float(df['Pressure'].mean()),
+            'avg_temperature': float(df['Temperature'].mean()),
+            'min_flowrate': float(df['Flowrate'].min()),
+            'max_flowrate': float(df['Flowrate'].max()),
+            'min_pressure': float(df['Pressure'].min()),
+            'max_pressure': float(df['Pressure'].max()),
+            'min_temperature': float(df['Temperature'].min()),
+            'max_temperature': float(df['Temperature'].max()),
         }
     
     def get_type_distribution(self, df):
@@ -24,14 +25,14 @@ class DataAnalyzer:
             distribution.append({
                 'equipment_type': eq_type,
                 'count': int(count),
-                'percentage': round((count / total) * 100, 2)
+                'percentage': round((int(count) / total) * 100, 2)
             })
         return distribution
     
     def get_type_statistics(self, df, equipment_type):
         type_df = df[df['Type'] == equipment_type]
         return {
-            'avg_flowrate': type_df['Flowrate'].mean(),
-            'avg_pressure': type_df['Pressure'].mean(),
-            'avg_temperature': type_df['Temperature'].mean(),
+            'avg_flowrate': float(type_df['Flowrate'].mean()),
+            'avg_pressure': float(type_df['Pressure'].mean()),
+            'avg_temperature': float(type_df['Temperature'].mean()),
         }
