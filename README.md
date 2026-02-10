@@ -23,16 +23,16 @@ A full-stack application designed to analyze, visualize, and report on chemical 
 
 ### Backend
 
-* **Framework:** Django 4.2.7 & Django REST Framework 3.14.0
-* **Data Processing:** Pandas 2.1.0
-* **Reporting:** ReportLab 4.0.7
+* **Framework:** Django & Django REST Framework 
+* **Data Processing:** Pandas 
+* **Reporting:** ReportLab 
 * **Database:** SQLite3 (Default) / Postgres-ready
 
 ### Web Frontend
 
-* **Core:** React 18, Vite 5
-* **State/Routing:** React Router DOM 6.20
-* **Visualization:** Chart.js 4.4, React-Chartjs-2
+* **Core:** React, Vite 
+* **State/Routing:** React Router DOM 
+* **Visualization:** Chart.js , React-Chartjs-2
 * **HTTP Client:** Axios
 
 ### Desktop Frontend
